@@ -39,39 +39,29 @@ int binary_tree_is_full(const binary_tree_t *tree)
 	return (0);
 }
 /**
- * binary_tree_balance - balance between left(+) and right (-)
- * @tree: pointer to the node to calcul balance
- * Return: 0 if tree is NULL.
- */
-int binary_tree_balance(const binary_tree_t *tree)
-{
-	int h_left = 0;
-	int h_right = 0;
-	int bal;
-
-	if (!tree)
-		return (0);
-	h_left = binary_tree_height(tree->left);
-	h_right = binary_tree_height(tree->right);
-	bal = h_left - h_right;
-
-return (bal);
-}
-/**
  * binary_tree_is_perfect - check of tree if perfect (balanced)
  * @tree : the tree itself
  * Return: 1 if perfect else 0
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-	if (!tree)
+	int left_h, right_h;
+
+	if (tree == NULL)
 		return (0);
 
-	if (binary_tree_height(tree->right) ==
-	binary_tree_height(tree->left) &&
-	binary_tree_is_full(tree->left) == binary_tree_is_full(tree->right) &&
-	binary_tree_balance(tree->right) == 0 &&
-	binary_tree_balance(tree->right) == 0)
+	left_h = binary_tree_height(tree->left);
+	right_h = binary_tree_height(tree->right);
+
+	if (left_h != right_h)
+		return (0);
+
+	if (!binary_tree_is_full(tree))
+		return (0);
+
+	if ((tree->left == NULL || binary_tree_is_perfect(tree->left)) &&
+			(tree->right == NULL || binary_tree_is_perfect(tree->right)))
 		return (1);
-	return (0);
+
+return (0);
 }

@@ -7,7 +7,7 @@
 C#25 - Holberton School - Toulouse
 
 | Binary Trees | Description |
-| -----------: | ----------- |
+| :----------- | ----------- |
 | [0-binary_tree_node.c](https://github.com/vlldnt/holbertonschool-binary_trees/blob/main/0-binary_tree_node.c) | Creation of a new parent node |
 | [1-binary_tree_insert_left.c](https://github.com/vlldnt/holbertonschool-binary_trees/blob/main/1-binary_tree_insert_left.c) | Insert a left child node |
 | [2-binary_tree_insert_right.c](https://github.com/vlldnt/holbertonschool-binary_trees/blob/main/2-binary_tree_insert_right.c) | Insert a right child node |
